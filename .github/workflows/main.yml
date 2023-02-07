@@ -67,7 +67,8 @@ jobs:
     
          
       - name: Publish test results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: dorny/test-reporter@v1
+        if: always()
         with:
           name: test-results
           path: "**/report.xml"
