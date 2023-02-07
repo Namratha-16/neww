@@ -72,5 +72,7 @@ jobs:
         with:
           name: test-results
           path: "**/report.xml"
+          reporter: dotnet-trx
+          fail-on-error: true
      
           
