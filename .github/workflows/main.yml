@@ -71,7 +71,7 @@ jobs:
         if: always()
         with:
           #name: test-results
-          trx_files: "test-results/**/*.xml"
+         xml_files: "test-results/**/*.xml"
           #path: "**/report.xml"
           #reporter: dotnet-trx
           #fail-on-error: true
