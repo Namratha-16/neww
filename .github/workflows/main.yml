@@ -67,12 +67,13 @@ jobs:
     
          
       - name: Publish test results
-        uses: dorny/test-reporter@v1
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          name: test-results
-          path: "**/report.xml"
-          reporter: dotnet-trx
-          fail-on-error: true
+          #name: test-results
+          trx_files: "test-results/**/*.xml"
+          #path: "**/report.xml"
+          #reporter: dotnet-trx
+          #fail-on-error: true
      
           
