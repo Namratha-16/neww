@@ -66,13 +66,10 @@ jobs:
          
     
          
-      - name: Publish test results
-        uses: dorny/test-reporter@v1
-        if: always()
+      - name: Publish test report
+        uses: actions/upload-artifact@v2
         with:
-          name: test-results
-          path: "**/report.xml"
-          reporter: dotnet-trx
-          fail-on-error: true
+           name: test-report
+           path: report.xml
      
           
