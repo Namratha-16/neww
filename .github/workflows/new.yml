@@ -71,10 +71,14 @@ jobs:
         with:
            name: test-report
            path: 'unit-tests/build/report.xml'
-     
-      - name: Publish report to Grafana
-        uses: jakecraige/grafana-dashboard-uploader@v1
-        with:
-          grafana-url: http://100.20.0.129:3000/login
-          grafana-token: ${{ secrets.GRAFANA_API_KEY }}
-          #dashboard-file: dashboard.json
+   
+    
+      - name: Publish UT report to MySQL
+        env: 
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          UT_REPORT_PATH: ./coverage/jest-junit.xml
+        run: node publish_report.js
