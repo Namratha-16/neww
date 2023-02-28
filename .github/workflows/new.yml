@@ -71,8 +71,6 @@ jobs:
         with:
            name: test-report
            path: 'unit-tests/build/report.xml'
-   
-    
       - name: Publish UT report to MySQL
         env: 
           DB_HOST: ${{ secrets.DB_HOST }}
