@@ -73,10 +73,10 @@ jobs:
            path: 'unit-tests/build/report.xml'
       - name: Publish UT report to MySQL
         env: 
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_PORT: ${{ secrets.DB_PORT }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          UT_REPORT_PATH: ./coverage/jest-junit.xml
-        run: node publish_report.js
+          DB_HOST: ${{ secrets.localhost }}
+          DB_PORT: ${{ secrets.3306 }}
+          DB_NAME: ${{ secrets.Polaris }}
+          DB_USER: ${{ secrets.admin }}
+          DB_PASSWORD: ${{ secrets.Polaris22@ }}
+          UT_REPORT_PATH: 'unit-tests/build/report.xml'
+        
