@@ -79,4 +79,5 @@ jobs:
           DB_USER: ${{ secrets.admin }}
           DB_PASSWORD: ${{ secrets.Polaris22@ }}
           UT_REPORT_PATH: 'unit-tests/build/report.xml'
+          run: publish_report.xml
         
